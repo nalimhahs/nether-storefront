@@ -27,12 +27,12 @@ const ProductList: React.SFC<{
             <Thumbnail source={line.variant.product} />
           </Link>
           <div className="cart__list__item__details">
-            <p>
-              <TaxedMoney taxedMoney={line.variant.pricing.price} />
-            </p>
             <Link to={productUrl}>
               <p>{line.variant.product.name}</p>
             </Link>
+            <p>
+              <TaxedMoney taxedMoney={line.variant.pricing.price} />
+            </p>
             <span className="cart__list__item__details__variant">
               <span>{line.variant.name}</span>
               <span>{`Qty: ${line.quantity}`}</span>

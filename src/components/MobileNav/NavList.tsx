@@ -83,7 +83,7 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
                 <span />
               </span>
             </li>
-            <li className="side-nav__menu-item">
+            {/* <li className="side-nav__menu-item">
               <Link
                 to={baseUrl}
                 className="side-nav__menu-item-link"
@@ -91,7 +91,7 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
               >
                 Home
               </Link>
-            </li>
+            </li> */}
           </>
         )}
 

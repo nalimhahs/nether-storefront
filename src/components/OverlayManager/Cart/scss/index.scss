@@ -54,6 +54,11 @@
           line-height: 1.5;
         }
 
+        > p {
+          font-weight: 400;
+          font-size: 0.9rem;
+        }
+
         &__variant {
           display: flex;
           justify-content: space-between;
@@ -100,6 +105,7 @@
     &__wrapper {
       border-bottom: 1px solid $gray;
       border-top: 1px solid $gray;
+      padding: 0 0.1rem;
     }
 
     &__price {
