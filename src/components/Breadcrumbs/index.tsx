@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import { baseUrl } from "../../app/routes";
 import { getDBIdFromGraphqlId, slugify } from "../../core/utils";
 import { Category_category } from "../../views/Category/types/Category";
+import ReactSVG from "react-svg";
+import arrowBack from "../../images/arrow-back.svg";
 
 export interface Breadcrumb {
   value: string;
@@ -66,7 +68,12 @@ const Breadcrumbs: React.FC<{
         </ul>
       ) : (
         <div className="breadcrumbs">
-          <Link to={getBackLink(breadcrumbs)}>Back</Link>
+          <Link to={getBackLink(breadcrumbs)} className="breadcrumbs__mobile">
+            <ReactSVG
+              path={arrowBack}
+            />
+            <span>Go Back</span>
+          </Link>
         </div>
       )
     }
