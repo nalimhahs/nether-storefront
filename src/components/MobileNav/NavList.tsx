@@ -6,6 +6,7 @@ import ReactSVG from "react-svg";
 
 import { baseUrl } from "../../app/routes";
 import NavItem, { INavItem } from "./NavItem";
+import { NavLink } from "..";
 
 import backImg from "../../images/arrow-back.svg";
 import logoImg from "../../images/logo.svg";
@@ -13,17 +14,20 @@ import logoImg from "../../images/logo.svg";
 interface NavListProps {
   items: INavItem[];
   hideOverlay(): void;
+  isActive: boolean;
 }
 
 interface NavListState {
   parent: INavItem | null;
   displayedItems: INavItem[];
+  activeItem: INavItem | null;
 }
 
 class NavList extends React.PureComponent<NavListProps, NavListState> {
   state: NavListState = {
     displayedItems: this.props.items,
     parent: null,
+    activeItem: this.props.items[0],
   };
 
   handleShowSubItems = (item: INavItem) => {
@@ -57,10 +61,14 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
     return match;
   }
 
+  changeActive = (item: INavItem) => {
+    this.setState({ activeItem: item });
+  };
+
   render() {
     const { hideOverlay } = this.props;
     const { displayedItems, parent } = this.state;
-
+    // console.log(this.state.activeItem.children);
     return (
       <ul>
         {parent ? (
@@ -94,15 +102,27 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
             </li> */}
           </>
         )}
-
-        {displayedItems.map(item => (
-          <NavItem
-            key={item.id}
-            hideOverlay={hideOverlay}
-            showSubItems={this.handleShowSubItems}
-            {...item}
-          />
-        ))}
+        <li className="side-nav__header">
+          {displayedItems.map(item => (
+            <NavItem
+              key={item.id}
+              hideOverlay={hideOverlay}
+              showSubItems={this.handleShowSubItems}
+              currentActive={this.state.activeItem}
+              setActive={this.changeActive}
+              {...item}
+            />
+          ))}
+        </li>
+        <li className="sub-cat">
+          {this.state.activeItem !== null
+            ? this.state.activeItem.children.map(sub => (
+                <NavLink item={sub} key={sub.id}>
+                  {sub.name}
+                </NavLink>
+              ))
+            : ""}
+        </li>
       </ul>
     );
   }

@@ -37,10 +37,6 @@ export const ProductListHeader: React.FC<IProps> = ({
         </S.LeftSide>
 
         <S.RightSide>
-          <S.Element data-cy="no-of-products-found_label">
-            <S.Label>Products found: </S.Label>
-            {numberOfProducts}
-          </S.Element>
           <S.Element>
             <S.Sort>
               <DropdownSelect

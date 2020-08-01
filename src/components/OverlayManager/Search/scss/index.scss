@@ -14,9 +14,14 @@ $drawer-width: 25rem;
   }
 
   &__input {
+
+    > .input {
+      margin-bottom: 0;
+    }
+
     .input__icon-right {
       margin-top: 0.9rem;
-      
+
       svg * {
         fill: $base-font-color;
       }
