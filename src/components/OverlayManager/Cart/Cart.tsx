@@ -51,9 +51,9 @@ const Cart: React.FC<{ overlay: OverlayContextInterface }> = ({ overlay }) => {
       <Online>
         <div className="cart">
           <div className="overlay__header">
-            <ReactSVG path={cartImg} className="overlay__header__cart-icon" />
+            {/* <ReactSVG path={cartImg} className="overlay__header__cart-icon" /> */}
             <div className="overlay__header-text">
-              My bag,{" "}
+              My Bag,{" "}
               <span className="overlay__header-text-items">
                 {items?.reduce(
                   (prevVal, currVal) => prevVal + currVal.quantity,
@@ -72,51 +72,53 @@ const Cart: React.FC<{ overlay: OverlayContextInterface }> = ({ overlay }) => {
             <>
               <ProductList lines={items} remove={removeItem} />
               <div className="cart__footer">
-                <div className="cart__footer__price">
-                  <span>Subtotal</span>
-                  <span>
-                    <TaxedMoney
-                      data-cy="cartPageSubtotalPrice"
-                      taxedMoney={subtotalPrice}
-                    />
-                  </span>
-                </div>
-
-                {shippingTaxedPrice && shippingTaxedPrice.gross.amount !== 0 && (
+                <div className="cart__footer__wrapper">
                   <div className="cart__footer__price">
-                    <span>Shipping</span>
+                    <span>Subtotal</span>
                     <span>
                       <TaxedMoney
-                        data-cy="cartPageShippingPrice"
-                        taxedMoney={shippingTaxedPrice}
+                        data-cy="cartPageSubtotalPrice"
+                        taxedMoney={subtotalPrice}
                       />
                     </span>
                   </div>
-                )}
 
-                {promoTaxedPrice && promoTaxedPrice.gross.amount !== 0 && (
+                  {shippingTaxedPrice && shippingTaxedPrice.gross.amount !== 0 && (
+                    <div className="cart__footer__price">
+                      <span>Shipping</span>
+                      <span>
+                        <TaxedMoney
+                          data-cy="cartPageShippingPrice"
+                          taxedMoney={shippingTaxedPrice}
+                        />
+                      </span>
+                    </div>
+                  )}
+
+                  {promoTaxedPrice && promoTaxedPrice.gross.amount !== 0 && (
+                    <div className="cart__footer__price">
+                      <span>Promo code</span>
+                      <span>
+                        <TaxedMoney
+                          data-cy="cartPagePromoCodePrice"
+                          taxedMoney={promoTaxedPrice}
+                        />
+                      </span>
+                    </div>
+                  )}
+
                   <div className="cart__footer__price">
-                    <span>Promo code</span>
+                    <span>Total</span>
                     <span>
                       <TaxedMoney
-                        data-cy="cartPagePromoCodePrice"
-                        taxedMoney={promoTaxedPrice}
+                        data-cy="cartPageTotalPrice"
+                        taxedMoney={totalPrice}
                       />
                     </span>
                   </div>
-                )}
-
-                <div className="cart__footer__price">
-                  <span>Total</span>
-                  <span>
-                    <TaxedMoney
-                      data-cy="cartPageTotalPrice"
-                      taxedMoney={totalPrice}
-                    />
-                  </span>
                 </div>
 
-                <div className="cart__footer__button">
+                {/* <div className="cart__footer__button">
                   <Link
                     to={generatePath(cartUrl, {
                       token: null,
@@ -124,7 +126,7 @@ const Cart: React.FC<{ overlay: OverlayContextInterface }> = ({ overlay }) => {
                   >
                     <Button secondary>Go to my bag</Button>
                   </Link>
-                </div>
+                </div> */}
                 <div className="cart__footer__button">
                   <Link to={user ? checkoutUrl : checkoutLoginUrl}>
                     <Button>Checkout</Button>
