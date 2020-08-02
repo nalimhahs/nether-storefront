@@ -2,15 +2,39 @@
 
 .home-page {
   &__hero {
-    background-color: $blue-overlay;
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 12rem 0;
-
+    
+    height: 85vh;
     &-text {
       overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    &-content {
+      position: absolute;
+      left: 9vw;
+      top: 35vh;
+      // background-color: $blue-overlay;
+      background-blend-mode: overlay;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("https://demo2.wpopal.com/qos/wp-content/uploads/2019/07/rev_sliderhome11_shape.png");
+      padding: 2rem;
+      border-left: 2px solid $base-font-color;
+      padding-top: 0.9rem;
+    }
+
+    &-img {
+      position: absolute;
+      background-color: $blue-overlay;
+      background-blend-mode: normal;
+      background-size: cover;
+      background-position: center;
+      width: 70%;
+      height: 75vh;
+      margin-top: 4vh;
+      margin-bottom: 10vh;
+      right: 5vw;
     }
 
     @media (max-width: $small-screen) {
@@ -33,11 +57,9 @@
     }
 
     &__title {
-      background-color: $white;
       display: inline-block;
-      transform: skew(45deg);
-      padding: $spacer $spacer * 3;
-      margin-bottom: $spacer / 2;
+      padding: $spacer / 2 0;
+      // margin-bottom: $spacer;
 
       @media (max-width: $small-screen) {
         padding: 0.6rem $spacer;
@@ -45,13 +67,8 @@
       }
 
       h1 {
-        display: inline-block;
-        transform: skew(-45deg);
-        font-weight: $bold-font-weight;
-        text-transform: uppercase;
-        color: $blue;
-        font-size: $h1-font-size;
-        font-weight: 900;
+        font-weight: 600;
+        font-size: 3rem;
 
         @media (max-width: $small-screen) {
           font-size: $h4-font-size;
@@ -61,6 +78,15 @@
           font-size: 48px;
         }
       }
+
+      p {
+        font-weight: 500;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 0.7rem;
+        letter-spacing: 0.1rem;
+        margin-left: 0.2rem;
+      }
     }
   }
 
@@ -68,7 +94,6 @@
     margin-bottom: 2rem;
 
     h3 {
-      text-transform: uppercase;
       font-weight: $bold-font-weight;
       margin-bottom: 1rem;
     }
@@ -97,7 +122,6 @@
         color: $base-font-color;
 
         h3 {
-          text-transform: uppercase;
           font-weight: $bold-font-weight;
 
           &:after {

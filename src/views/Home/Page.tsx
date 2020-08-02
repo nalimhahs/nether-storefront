@@ -32,43 +32,57 @@ const Page: React.FC<{
       <script className="structured-data-list" type="application/ld+json">
         {structuredData(shop)}
       </script>
-      <div
-        className="home-page__hero"
-        style={
-          backgroundImage
-            ? { backgroundImage: `url(${backgroundImage.url})` }
-            : null
-        }
-      >
-        <div className="home-page__hero-text">
-          <div>
-            <span className="home-page__hero__title">
-              <h1>Final reduction</h1>
-            </span>
+
+      {/* Start Hero Section */}
+      <div className="home-page__hero">
+        <div
+          className="home-page__hero-img"
+          style={
+            backgroundImage
+              ? // ? { backgroundImage: `url(${backgroundImage.url})` }
+                {
+                  backgroundImage: `url("https://demo2.wpopal.com/qos/wp-content/uploads/2019/07/rev_sliderhome14_layer2.jpg")`,
+                }
+              : null
+          }
+        ></div>
+        <div className="home-page__hero-content">
+          <div className="home-page__hero-text">
+            <div>
+              <span className="home-page__hero__title">
+                <p>New Collection</p>
+              </span>
+            </div>
+            <div>
+              <span className="home-page__hero__title">
+                <h1>Respect the Drip</h1>
+              </span>
+            </div>
+            <div>
+              <span className="home-page__hero__title">
+                <h1>Sale!</h1>
+              </span>
+            </div>
           </div>
-          <div>
-            <span className="home-page__hero__title">
-              <h1>Up to 70% off sale</h1>
-            </span>
+          <div className="home-page__hero-action">
+            {loading && !categories ? (
+              <Loader />
+            ) : (
+              categoriesExist() && (
+                <Link
+                  to={generateCategoryUrl(
+                    categories.edges[0].node.id,
+                    categories.edges[0].node.name
+                  )}
+                >
+                  <Button>Shop sale</Button>
+                </Link>
+              )
+            )}
           </div>
-        </div>
-        <div className="home-page__hero-action">
-          {loading && !categories ? (
-            <Loader />
-          ) : (
-            categoriesExist() && (
-              <Link
-                to={generateCategoryUrl(
-                  categories.edges[0].node.id,
-                  categories.edges[0].node.name
-                )}
-              >
-                <Button>Shop sale</Button>
-              </Link>
-            )
-          )}
         </div>
       </div>
+      {/* End Hero Section */}
       <ProductsFeatured />
       {categoriesExist() && (
         <div className="home-page__categories">
