@@ -2,7 +2,6 @@
 
 .home-page {
   &__hero {
-    
     height: 85vh;
     &-text {
       overflow: hidden;
@@ -13,7 +12,6 @@
       position: absolute;
       left: 9vw;
       top: 35vh;
-      // background-color: $blue-overlay;
       background-blend-mode: overlay;
       background-size: contain;
       background-repeat: no-repeat;
@@ -35,24 +33,56 @@
       margin-top: 4vh;
       margin-bottom: 10vh;
       right: 5vw;
+      box-shadow: 1.4rem 1.5rem 0px 0px rgba(0, 0, 0, 0.15);
+      transition: 0.2s;
+
+      &:hover {
+        transform: scale(0.95);
+        box-shadow: 0.9rem 0.8rem 0px 0px rgba(0, 0, 0, 0.15);
+      }
     }
 
     @media (max-width: $small-screen) {
       align-items: center;
       display: flex;
       flex-direction: column;
-      height: calc(100vh - 56px);
+      height: 85vh;
       justify-content: space-between;
       padding: $spacer;
 
       &-text {
-        margin-top: $spacer * 5;
+        margin-top: 0;
         width: 100%;
+        margin-bottom: 1rem;
       }
 
       &-action {
-        margin-bottom: $spacer * 3;
+        margin-bottom: $spacer;
         width: 100%;
+      }
+
+      &-img {
+        width: 95%;
+        height: 75vh;
+        margin-top: 1vh;
+        margin-bottom: 10vh;
+        right: 0;
+        box-shadow: -0.7rem 1rem 0px 0px rgba(0, 0, 0, 0.15);
+        &:hover {
+          transform: scale(0.99);
+          box-shadow: -0.5rem 0.8rem 0px 0px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      &-content {
+        position: absolute;
+        left: 8vw;
+        top: 53vh;
+        border-left: 1px solid $base-font-color;
+        padding: 0;
+        width: 80%;
+        background-image: none;
+        padding-left: 1rem;
       }
     }
 
@@ -62,8 +92,7 @@
       // margin-bottom: $spacer;
 
       @media (max-width: $small-screen) {
-        padding: 0.6rem $spacer;
-        width: calc(100% - 4rem);
+        // width: calc(100% - 4rem);
       }
 
       h1 {
@@ -71,7 +100,7 @@
         font-size: 3rem;
 
         @media (max-width: $small-screen) {
-          font-size: $h4-font-size;
+          font-size: 2rem;
         }
 
         @media (min-width: $small-screen) and (max-width: $medium-screen) {
@@ -86,16 +115,22 @@
         margin-bottom: 0.7rem;
         letter-spacing: 0.1rem;
         margin-left: 0.2rem;
+
+        @media (max-width: $small-screen) {
+          font-size: 0.6rem;
+        }
       }
     }
   }
 
   &__categories {
     margin-bottom: 2rem;
+    margin-top: 6rem;
 
     h3 {
       font-weight: $bold-font-weight;
-      margin-bottom: 1rem;
+      margin-bottom: 5rem;
+      font-size: 2rem;
     }
 
     &__list {
@@ -104,15 +139,37 @@
       grid-gap: 2rem;
 
       @media (min-width: $small-screen) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
 
         > div {
-          &:nth-child(3) {
-            grid-column: 3 / 1;
-          }
+          transition: 0.2s;
+          // &:nth-child(1) {
+          //   margin-top: 1rem;
+          //   transform: scale(0.95);
+          // }
+
+          // &:nth-child(2) {
+          //   margin-top: 0rem;
+          // }
+
+          // &:nth-child(3) {
+          //   margin-top: 2rem;
+          //   transform: scale(0.95);
+          // }
 
           &:nth-child(n + 4) {
             display: none;
+          }
+
+          &:hover {
+            box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.02);
+            h3 {
+              margin-left: 1rem;
+              text-decoration: underline;
+            }
+            svg {
+              transform: rotate(45deg);
+            }
           }
         }
       }
@@ -120,16 +177,26 @@
       a {
         text-decoration: none;
         color: $base-font-color;
+        
+        span {
+          display: flex;
+        }
 
         h3 {
           font-weight: $bold-font-weight;
+          font-size: 1.5rem;
+          transition: 0.2s;
+          margin-top: 2rem;
+        }
 
-          &:after {
-            content: url("../../../images/carousel-arrow.svg");
-            display: inline-block;
-            transform: rotate(180deg);
-            margin-left: 1rem;
-          }
+        svg {
+          display: inline-block;
+          color: $base-font-color;
+          font-size: 1.5rem;
+          margin-top: 2rem;
+          transform: $button-content-transform;
+          transition: all 0.2s ease !important;
+          margin-left: 0.5rem;
         }
       }
 
@@ -139,6 +206,7 @@
         background-size: cover;
         background-position: center;
         margin-bottom: 1rem;
+        background-color: $turquoise-light;
 
         &--no-photo {
           background-color: $turquoise-light;
