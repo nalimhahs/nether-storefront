@@ -5,6 +5,7 @@
     border-top: 1px solid $gray-light;
     display: flex;
     justify-content: center;
+    padding: 1rem !important;
   }
 
   &__menu {
@@ -46,7 +47,7 @@
 
   &-nav {
     background-color: $gray-light;
-    padding: $spacer * 3 0 $spacer * 2;
+    padding: $spacer * 5 0 $spacer * 2;
 
     .container {
       display: flex;
@@ -60,13 +61,13 @@
     &__section {
       &-header {
         font-weight: $bold-font-weight;
-        margin-bottom: $spacer;
-        text-transform: uppercase;
+        margin-bottom: $spacer * 1.5;
+        font-size: 1.2rem;
       }
 
       &-content {
         p {
-          margin-bottom: $spacer;
+          margin-bottom: $spacer * 0.8;
           font-size: $small-font-size;
           color: $gray;
 
