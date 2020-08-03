@@ -221,7 +221,11 @@
   }
 
   &__nav-dropdown {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+    
+    a {
+      font-weight: 600;
+    }
 
     &--active {
       background-color: $turquoise-light;
