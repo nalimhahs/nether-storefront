@@ -4,7 +4,6 @@ import React from "react";
 
 import { Footer, MainMenu, MetaConsumer, OverlayManager } from "../components";
 import { Routes } from "./routes";
-import { TopNavbar } from "../@next/components/organisms/TopNavbar"
 
 const App: React.FC = () => {
   return (
@@ -12,7 +11,6 @@ const App: React.FC = () => {
       <MetaConsumer />
       <header>
         <MainMenu />
-        {/* <TopNavbar /> */}
       </header>
       <Routes />
       <Footer />

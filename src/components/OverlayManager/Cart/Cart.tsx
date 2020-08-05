@@ -1,7 +1,7 @@
 import "./scss/index.scss";
 
 import * as React from "react";
-import { generatePath, Link } from "react-router-dom";
+import { /*generatePath,*/ Link } from "react-router-dom";
 import ReactSVG from "react-svg";
 
 import { TaxedMoney } from "@components/containers";
@@ -15,11 +15,11 @@ import {
   Overlay,
   OverlayContextInterface,
 } from "../..";
-import { cartUrl, checkoutLoginUrl, checkoutUrl } from "../../../app/routes";
+import { /*cartUrl,*/ checkoutLoginUrl, checkoutUrl } from "../../../app/routes";
 import Empty from "./Empty";
 import ProductList from "./ProductList";
 
-import cartImg from "../../../images/cart.svg";
+// import cartImg from "../../../images/cart.svg";
 import closeImg from "../../../images/x.svg";
 
 const Cart: React.FC<{ overlay: OverlayContextInterface }> = ({ overlay }) => {

@@ -4,9 +4,10 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import ReactSVG from "react-svg";
 
+import { NavLink } from "..";
+
 import { baseUrl } from "../../app/routes";
 import NavItem, { INavItem } from "./NavItem";
-import { NavLink } from "..";
 
 import backImg from "../../images/arrow-back.svg";
 import logoImg from "../../images/logo.svg";
@@ -14,7 +15,6 @@ import logoImg from "../../images/logo.svg";
 interface NavListProps {
   items: INavItem[];
   hideOverlay(): void;
-  isActive: boolean;
 }
 
 interface NavListState {
@@ -25,9 +25,9 @@ interface NavListState {
 
 class NavList extends React.PureComponent<NavListProps, NavListState> {
   state: NavListState = {
+    activeItem: this.props.items[0],
     displayedItems: this.props.items,
     parent: null,
-    activeItem: this.props.items[0],
   };
 
   handleShowSubItems = (item: INavItem) => {

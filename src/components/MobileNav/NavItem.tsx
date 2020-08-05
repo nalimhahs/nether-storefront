@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import * as React from "react";
-import ReactSVG from "react-svg";
+// import ReactSVG from "react-svg";
 
 import { MainMenuSubItem } from "../MainMenu/types/MainMenuSubItem";
 
-import subcategoriesImg from "../../images/subcategories.svg";
-import { useState } from "react";
+// import subcategoriesImg from "../../images/subcategories.svg";
+// import { useState } from "react";
 
 interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   item: MainMenuSubItem;
@@ -21,10 +21,10 @@ export interface INavItem extends MainMenuSubItem {
 }
 
 interface NavItemProps extends INavItem {
+  currentActive: INavItem;
   hideOverlay(): void;
   showSubItems(item: INavItem): void;
   setActive(item: INavItem): void;
-  currentActive: INavItem;
 }
 
 const NavItem: React.FC<NavItemProps> = ({
@@ -49,7 +49,6 @@ const NavItem: React.FC<NavItemProps> = ({
           "side-nav__menu-item-link": true,
           "sub-active": currentActive.id === item.id,
         })}
-
         onClick={() => {
           setActive(item);
         }}
