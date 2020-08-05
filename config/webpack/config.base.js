@@ -41,7 +41,7 @@ module.exports = ({ sourceDir, distDir }) => ({
         },
       },
       {
-        test: /\.(woff2?|ttf|eot)$/,
+        test: /\.(woff2|ttf|eot)$/,
         use: [
           {
             loader: "file-loader",
