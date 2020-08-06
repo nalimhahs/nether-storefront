@@ -5,7 +5,7 @@ export const Wrapper = styled.div<{ selected: boolean; disabled: boolean }>`
   justify-content: space-between;
   align-items: center;
   padding: ${props => `1.1rem ${props.theme.spacing.gutter}`};
-  border-bottom: 1px solid ${props => props.theme.colors.light};
+  /* border-bottom: 1px solid ${props => props.theme.colors.light}; */
   ${({ selected, theme }) =>
     selected && `font-weight: ${theme.typography.boldFontWeight};`}
   color: ${props => (props.disabled ? props.theme.colors.disabled : `unset`)};

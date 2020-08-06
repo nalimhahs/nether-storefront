@@ -6,8 +6,9 @@ export const Header = styled.div<{ divider: boolean }>`
   justify-content: space-between;
   align-items: center;
   padding: ${props => `1.1rem ${props.theme.spacing.gutter}`};
-  ${({ divider, theme }) =>
-    divider && `border-bottom: 1px solid ${theme.colors.light};`}
+  /* ${({ divider, theme }) =>
+    divider && `border-bottom: 1px solid ${theme.colors.light};`} */
+  height: 20vh;
 `;
 
 export const Title = styled.h4<{ size: TitleSize }>`
@@ -15,9 +16,9 @@ export const Title = styled.h4<{ size: TitleSize }>`
     size === "lg" ? typography.h4FontSize : typography.baseFontSize};
   font-weight: ${props => props.theme.typography.boldFontWeight};
   color: ${props => props.theme.colors.baseFont};
-  text-transform: uppercase;
   padding-right: 0.6rem;
   margin: 0;
+  margin-top: 0.5rem;
 `;
 
 export const Paragraph = styled.p`

@@ -35,7 +35,7 @@ export const SelectSidebar: React.FC<IProps> = ({
     >
       <S.Wrapper ref={setElementRef()}>
         <CardHeader divider onHide={hide}>
-          <span>{title}</span>
+          <span style={{ fontSize: "1.5rem" }}>{title}</span>
         </CardHeader>
         <S.Content>
           {options.map(option => {
