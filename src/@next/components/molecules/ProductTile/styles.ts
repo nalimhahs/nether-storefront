@@ -10,7 +10,7 @@ const textProps = css`
 export const Wrapper = styled.div`
   background: ${(props) => props.theme.colors.light};
   text-align: center;
-  max-height: 50rem;
+  /* max-height: 70rem; */
   transition: 0.3s;
 
   > div > h4,
@@ -52,24 +52,38 @@ export const Title = styled.h4`
   line-height: 1.6rem;
 
   ${textProps}
+
+  ${media.smallScreen`
+    font-size: 0.98rem;
+  `}
 `;
 
 export const Price = styled.p`
   color: rgb(45, 45, 45);
-  font-size: 1.3rem;
   line-height: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
 
   ${textProps}
+
+  font-size: 1rem;
+
+  ${media.smallScreen`
+    font-size: 0.9rem;
+    line-height: 1rem;
+  `}
 `;
 
 export const Image = styled.div`
   width: auto;
   height: auto;
   max-width: 100%;
+  min-height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  ${media.largeScreen`
-    padding: 1rem;
+  ${media.smallScreen`
+    min-height: 17rem;
   `}
 
   > img {
