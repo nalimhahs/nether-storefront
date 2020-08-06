@@ -1,8 +1,8 @@
 import React from "react";
 import ReactSVG from "react-svg";
 
-import AddToCartButton from "./AddToCartButton";
 import cartImg from "../../images/cart.svg";
+import AddToCartButton from "./AddToCartButton";
 
 const AddToCart: React.FC<{
   disabled: boolean;
@@ -18,12 +18,12 @@ const AddToCart: React.FC<{
     >
       <span
         style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "center",
           alignItems: "center",
+          display: "flex",
+          fontSize: "1.3rem",
+          justifyContent: "center",
           margin: "0.2rem 0rem",
-          fontSize: "1.3rem"
+          width: "100%",
         }}
       >
         Add to basket

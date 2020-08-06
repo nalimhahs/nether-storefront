@@ -2,6 +2,7 @@ import "./scss/index.scss";
 
 import isEqual from "lodash/isEqual";
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 import { ProductVariantPicker } from "@components/organisms";
 import {
@@ -15,7 +16,6 @@ import { ICheckoutModelLine } from "@sdk/repository";
 import { TaxedMoney } from "../../@next/components/containers";
 import AddToCart from "./AddToCart";
 import { QuantityTextField } from "./QuantityTextField";
-import { Link } from "react-router-dom";
 
 interface ProductDescriptionProps {
   productId: string;
