@@ -38,17 +38,17 @@ export const Tabs = styled.div`
 
 export const TabTitle = styled.div<{ active?: boolean }>`
   cursor: pointer;
-  min-width: 200px;
+  min-width: 0px;
   font-size: ${props => props.theme.typography.h3FontSize};
   font-weight: ${props => props.theme.typography.boldFontWeight};
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   color: ${props => props.active && props.theme.colors.tabTitle};
-  border-bottom-width: 4px;
+  border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: ${props =>
     props.active ? props.theme.colors.tabTitle : "transparent"};
   padding-bottom: 20px;
-  margin-right: 0px;
+  margin-right: 2rem;
 
   ${media.smallScreen`
     font-size: ${(props: any) => props.theme.typography.h4FontSize};

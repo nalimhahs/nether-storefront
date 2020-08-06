@@ -77,7 +77,7 @@ export const Image = styled.div`
   width: auto;
   height: auto;
   max-width: 100%;
-  min-height: 25rem;
+  min-height: 22rem;
   display: flex;
   justify-content: center;
   align-items: center;
