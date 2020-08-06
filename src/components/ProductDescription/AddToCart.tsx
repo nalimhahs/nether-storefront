@@ -26,7 +26,7 @@ const AddToCart: React.FC<{
           width: "100%",
         }}
       >
-        Add to basket
+        Add to Bag
         <ReactSVG path={cartImg} style={{ marginLeft: "1rem" }} />
       </span>
     </AddToCartButton>
