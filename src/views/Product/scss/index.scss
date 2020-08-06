@@ -4,8 +4,8 @@
   background-color: $white;
 
   .breadcrumbs {
-    background-color: $white;
-    padding: $spacer / 2 $spacer $spacer / 2 $spacer * 1.5;
+    // background-color: $turquoise-light;
+    padding: 1rem 0rem;
     margin-top: $spacer * 2;
   }
 
@@ -27,7 +27,7 @@
 
     &__info {
       flex-grow: 1;
-      width: 30%;
+      width: 35%;
       position: relative;
 
       @media (max-width: $medium-screen) {
@@ -101,7 +101,6 @@
     padding: $spacer * 4 0;
 
     &__title {
-      text-transform: uppercase;
       font-weight: $bold-font-weight;
       margin-bottom: $spacer * 2;
     }

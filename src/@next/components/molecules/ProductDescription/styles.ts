@@ -1,6 +1,8 @@
 import { media, styled } from "@styles";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  margin-top: 3rem;
+`;
 
 export const AttributeList = styled.ul`
   columns: 2;
@@ -32,12 +34,11 @@ export const Tabs = styled.div`
   width: 100%;
   border-bottom: 1px solid ${props => props.theme.colors.tabsBorder};
   margin-bottom: 70px;
-  overflow: hidden;
 `;
 
 export const TabTitle = styled.div<{ active?: boolean }>`
   cursor: pointer;
-  min-width: 230px;
+  min-width: 200px;
   font-size: ${props => props.theme.typography.h3FontSize};
   font-weight: ${props => props.theme.typography.boldFontWeight};
   letter-spacing: 0.02em;
@@ -46,8 +47,8 @@ export const TabTitle = styled.div<{ active?: boolean }>`
   border-bottom-style: solid;
   border-bottom-color: ${props =>
     props.active ? props.theme.colors.tabTitle : "transparent"};
-  padding-bottom: 25px;
-  margin-right: 60px;
+  padding-bottom: 20px;
+  margin-right: 0px;
 
   ${media.smallScreen`
     font-size: ${(props: any) => props.theme.typography.h4FontSize};

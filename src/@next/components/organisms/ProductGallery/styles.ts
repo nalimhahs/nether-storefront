@@ -11,12 +11,16 @@ export const Wrapper = styled.div`
 export const Thumbnail = styled.div<{ activeThumbnail: boolean }>`
   width: 76px;
   display: flex;
-  border-width: 4px;
+  border-width: 1px;
   border-style: solid;
   border-color: ${props =>
     props.activeThumbnail === true
       ? props.theme.colors.thumbnailBorder
       : "transparent"};
+  filter: ${props =>
+    props.activeThumbnail === true
+      ? "brightness(50%)"
+      : "brightness(100%)"};
   justify-content: center;
   height: 100px;
   overflow: hidden;

@@ -2,14 +2,19 @@
 
 .product-description {
   h3 {
-    text-transform: uppercase;
     font-weight: $bold-font-weight;
     margin-bottom: $spacer;
+    font-size: 2.3rem;
+    font-weight: 600;
+    letter-spacing: 0.07rem;
   }
 
   h4 {
-    font-weight: $bold-font-weight;
-    margin-bottom: $spacer;
+    font-weight: 400;
+    margin-bottom: $spacer * 4;
+    color: $gray-dark;
+    margin-top: 1.8rem;
+    font-size: 1.3rem;
   }
 
   &__about {
@@ -41,6 +46,8 @@
 
   &__action {
     min-height: 49px;
+    
+    margin-top: 2rem;
 
     &--fade {
       $animation-speed: 200ms;

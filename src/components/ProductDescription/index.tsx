@@ -15,6 +15,7 @@ import { ICheckoutModelLine } from "@sdk/repository";
 import { TaxedMoney } from "../../@next/components/containers";
 import AddToCart from "./AddToCart";
 import { QuantityTextField } from "./QuantityTextField";
+import { Link } from "react-router-dom";
 
 interface ProductDescriptionProps {
   productId: string;
@@ -157,6 +158,10 @@ class ProductDescription extends React.Component<
             hideErrors={!variant}
           />
         </div>
+        <p>
+          Note: Product is made to order. Delivery can take upto 3 weeks depending on regions.
+          <Link to={""} style={{color: "#999", textDecoration: "underline"}}> Learn More.</Link>
+        </p>
         <AddToCart
           onSubmit={this.handleSubmit}
           disabled={!this.canAddToCart()}

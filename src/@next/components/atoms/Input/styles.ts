@@ -23,7 +23,7 @@ const getEdgeColor = (
     return theme.colors.secondary;
   }
 
-  return active ? theme.colors.secondary : theme.colors.dark;
+  return active ? theme.colors.secondary : "#777";
 };
 
 export const Wrapper = styled.div<WrapperProps>`
