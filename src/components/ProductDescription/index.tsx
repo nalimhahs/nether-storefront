@@ -159,8 +159,8 @@ class ProductDescription extends React.Component<
           />
         </div>
         <p>
-          Note: This product is made to order. Delivery can take upto 3 weeks depending on regions.
-          <Link to={""} style={{color: "#999", textDecoration: "underline"}}> Learn More.</Link>
+          Note: This product is made to order. Delivery can take upto 3 weeks depending on regions. 
+          {" "}<Link to={""} style={{color: "#999", textDecoration: "underline"}}>Learn More.</Link>
         </p>
         <AddToCart
           onSubmit={this.handleSubmit}
