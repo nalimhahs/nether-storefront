@@ -19,7 +19,7 @@ const CheckoutReview: React.FC<IProps> = ({
 }: IProps) => {
   return (
     <S.Wrapper>
-      <S.Title data-cy="checkoutPageSubtitle">REVIEW ORDER</S.Title>
+      <S.Title data-cy="checkoutPageSubtitle">Review Order</S.Title>
       <S.Grid>
         <section>
           <S.SubTitle data-cy="checkoutReviewSectionTitle">

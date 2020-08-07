@@ -89,7 +89,7 @@ const CheckoutPayment: React.FC<IProps> = ({
   return (
     <S.Wrapper>
       <section>
-        <S.Title data-cy="checkoutPageSubtitle">BILLING ADDRESS</S.Title>
+        <S.Title data-cy="checkoutPageSubtitle">Billing Address</S.Title>
         {billingAsShippingPossible && (
           <Checkbox
             data-cy="checkoutPaymentBillingAsShippingCheckbox"
@@ -136,17 +136,18 @@ const CheckoutPayment: React.FC<IProps> = ({
         )}
       </section>
       <S.Divider />
-      <section>
-        <S.Title data-cy="checkoutPageSubtitle">PAYMENT METHOD</S.Title>
-        <Checkbox
+      <section style={{ marginTop: "5rem"}}>
+        <S.Title data-cy="checkoutPageSubtitle">Choose Payment Method</S.Title>
+        {/* <Checkbox
           data-cy="checkoutPaymentPromoCodeCheckbox"
           name="payment-promo-code"
           checked={showPromoCodeForm}
           onChange={handleChangeShowPromoCodeForm}
         >
           Do you have a gift card voucher or discount code?
-        </Checkbox>
-        {showPromoCodeForm && (
+        </Checkbox> */}
+        <p>Got a Promo Code?</p>
+        {true && (
           <S.DiscountField>
             <DiscountForm
               discount={{ promoCode: promoCodeDiscount?.voucherCode }}
@@ -157,7 +158,7 @@ const CheckoutPayment: React.FC<IProps> = ({
             />
           </S.DiscountField>
         )}
-        <S.Divider />
+        {/* <S.Divider /> */}
         <PaymentGatewaysList
           errors={gatewayErrors}
           paymentGateways={paymentGateways}
